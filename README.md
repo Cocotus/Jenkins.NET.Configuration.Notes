@@ -6,6 +6,7 @@ Furthermore this tutorial will tell you how to achieve following for each job in
 
 - Display of warnings graph, test results graph, codecoverage graph, detailed HTML report of codecodeverage
 - Trigger release build of project, create nuget package and push that to your own nuget server
+![alt text](https://github.com/Cocotus/JenkinsCIConcept/blob/master/Jenkins_Overview.png "Logo Title Text 1")
 
 ## Preparations
 **1. Tools required:**
@@ -20,7 +21,7 @@ Use installer to choose necessary features like Xamarin, NETCore....
 
 Copy Nuget.exe together with Installation folders of OpenCover and Reporter Nuget Package in a new folder called JENKINSTOOLS and move that folder to C:\ root. So result structure should look something like that:
 
-PIC
+![alt text](https://github.com/Cocotus/JenkinsCIConcept/blob/master/Jenkins_Tools.png "Logo Title Text 1")
 
 Tip:
 You can simply create a new Visual Studio project and get the Opencover, Reporter and Cobertura NugetPackages using Nuget packet managment menu. After installation go to .package folder and copy the opencover and reporter folders from there to JENKINSTOOLS. Right click on folder after moving it to C:\ and set folder rights to read/write for users.
