@@ -1,7 +1,11 @@
-# JenkinsCIConcept
-Jenkins Visual Studio project build, NUnit unit testing, and OpenCover code coverage.
+# Installation of Jenkins (for Microsoft Builds (.NETCore/NETFramework/Xamarin/NETStandard..)
+Following instructions describe setup of a Jenkins configuration which is used too automate builds of Microsoft Visual Studio projects.
+It's recommended to create Nuget packages instead of simple dll files as build output of your visual studio class projects and host those nuget packages in your own nuget server and uses that server in your projects. 
 
+Furthermore this tutorial will tell you how to achieve following for each job in Jenkins:
 
+- Display of warnings graph, test results graph, codecoverage graph, detailed HTML report of codecodeverage
+- Trigger release build of project, create nuget package and push that to your own nuget server
 
 # Jenkins Continuous Integration Flow
 
