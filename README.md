@@ -11,13 +11,11 @@ Furthermore this tutorial will tell you how to achieve following for each job in
 ## Preparations
 **1. Tools required:**
 - Jenkins Installation on Windows machine
-- Visual Studio 2017+ Installation on same machine where Jenkins is running
-https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
-Use installer to choose necessary features like Xamarin, NETCore....
-- Nuget.exe (Download nuget.exe here: )
-- OpenCover.exe (Nuget-Package)
-- Reporter.exe (Nuget-Package)
-- NugetServer like Baget (its free and open source and works)
+- Visual Studio 2017+ Installation on same machine where Jenkins is running. Use installer to choose necessary features like Xamarin, NETCore....
+- Nuget.exe https://www.nuget.org/downloads
+- OpenCover.exe https://www.nuget.org/packages/OpenCover/
+- ReportGenerator.exe https://www.nuget.org/packages/ReportGenerator/
+- NugetServer like Baget (its free and open source and works) https://github.com/loic-sharma/BaGet/
 
 Copy Nuget.exe together with Installation folders of OpenCover and Reporter Nuget Package in a new folder called JENKINSTOOLS and move that folder to C:\ root. So result structure should look something like that:
 
