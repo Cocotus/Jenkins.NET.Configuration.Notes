@@ -7,6 +7,26 @@ Furthermore this tutorial will tell you how to achieve following for each job in
 - Display of warnings graph, test results graph, codecoverage graph, detailed HTML report of codecodeverage
 - Trigger release build of project, create nuget package and push that to your own nuget server
 
+## Preparations
+**1. Tools required:**
+- Jenkins Installation on Windows machine
+- Visual Studio 2017+ Installation on same machine where Jenkins is running
+https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
+Use installer to choose necessary features like Xamarin, NETCore....
+- Nuget.exe (Download nuget.exe here: )
+- OpenCover.exe (Nuget-Package)
+- Reporter.exe (Nuget-Package)
+- NugetServer like Baget (its free and open source and works)
+
+Copy Nuget.exe together with Installation folders of OpenCover and Reporter Nuget Package in a new folder called JENKINSTOOLS and move that folder to C:\ root. So result structure should look something like that:
+
+PIC
+
+Tip:
+You can simply create a new Visual Studio project and get the Opencover, Reporter and Cobertura NugetPackages using Nuget packet managment menu. After installation go to .package folder and copy the opencover and reporter folders from there to JENKINSTOOLS. Right click on folder after moving it to C:\ and set folder rights to read/write for users.
+
+* * *
+
 # Jenkins Continuous Integration Flow
 
 
