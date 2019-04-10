@@ -85,16 +85,18 @@ Below I will list all configuration steps needed to configure a job in Jenkins t
    
 ### 2. Build action: Configure NuGet Package Restoration
 You need to paste a command like the following in the Command text box: 
+```shell
 C:\JENKINSTOOLS\nuget.exe restore  "%WORKSPACE%\CKS.PlausiValidation\CKS.PlausiValidation.sln"
+```
 
 ### 3. Build action: Configure MSBuild Process
 MSBuildFile:
 ${WORKSPACE}\CKS.PlausiValidation\CKS.PlausiValidation.sln
 
 Add following Parameter command in textbox:
-'''shell
+```shell
 /p:Configuration=Release
-'''
+```
 ### 4. Generate Statistics/Testresults
 The following lines will do the following:
 1. Run dotnet test to generate testresult .trx file for text project
