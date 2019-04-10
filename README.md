@@ -92,7 +92,7 @@ MSBuildFile:
 ${WORKSPACE}\CKS.PlausiValidation\CKS.PlausiValidation.sln
 
 Add following Parameter command in textbox:
-'''CMD
+'''shell
 /p:Configuration=Release
 '''
 ### 4. Generate Statistics/Testresults
