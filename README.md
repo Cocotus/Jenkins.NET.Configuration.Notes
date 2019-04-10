@@ -69,6 +69,40 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\
 2. Jenkins Configuration > Helper Tools configuration:
 3. Change Path to Git:  C:\Program Files\Git\cmd\git.exe
 
+## Job configuration
+Below I will list all configuration steps needed to configure a job in Jenkins to achieve following results:
+
+- Testresults in graph 
+- CodeCoverage in graph 
+- Warnings in graph
+- Coverage report in HTML
+
+### 1. Manage SourceCode Repository: GitProject
+1. Create new project
+2. Source Code Management -> Git
+   --> set URL Repository
+   --> set Credentials from list
+   
+### 2. Build action: Configure NuGet Package Restoration
+You need to paste a command like the following in the Command text box: 
+C:\JENKINSTOOLS\nuget.exe restore  "%WORKSPACE%\CKS.PlausiValidation\CKS.PlausiValidation.sln"
+
+### 3. Build action: Configure MSBuild Process
+MSBuildFile:
+${WORKSPACE}\CKS.PlausiValidation\CKS.PlausiValidation.sln
+
+Add following Parameter command in textbox:
+'''CMD
+/p:Configuration=Release
+'''
+### 4. Generate Statistics/Testresults
+The following lines will do the following:
+1. Run dotnet test to generate testresult .trx file for text project
+2. Run opencover.exe to run dotnet test again and produce coverage.xml
+3. Run reportgenerator to generate html report from coverage.xml
+
+Add following in Windows Shell Command: 
+
 
 # Jenkins Continuous Integration Flow
 
