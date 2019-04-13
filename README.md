@@ -208,8 +208,8 @@ Cobertura xml report pattern: **/target/Coverage/*Cobertura.xml
 
 # Additional tips for Jenkins setup
 ## Replace JENKINS label with your own text
-1. Install _Simple Theme_ Plugin in Jenkins
-2. _Manage Jenkins -> Configure System -> Theme -> Add -> URL of theme CSS:_
+1. Install __Simple Theme__ Plugin in Jenkins
+2. __Manage Jenkins -> Configure System -> Theme -> Add -> URL of theme CSS:__
 ``` Shell
 http://JENKINSIP/userContent/theme.css
 ```
