@@ -205,3 +205,37 @@ Cobertura xml report pattern: **/target/Coverage/*Cobertura.xml
   SOURCE: NUGETS/
   Remove prefix: NUGETS/
   Remote directory:NUGETS/
+
+# Additional tips for Jenkins setup
+## Replace JENKINS label with your own text
+1. Install SimpleTheme Plugin in Jenkins
+2. Manage Jenkins -> Configure System -> Theme -> Add -> URL of theme CSS:
+``` Shell
+http://JENKINSIP/userContent/theme.css
+```
+2. Create a theme.css file with following content and place it in usercontent folder of Jenkins:
+``` CSS
+@charset “utf-8”;
+ 
+/* Custom style for CloudBees Jenkins Platform 
+.logo img {
+content:url("cksplus.ico");
+height: 32px;
+vertical-align:middle;
+}
+*/
+
+.logo #jenkins-name-icon {
+display: none;
+}
+
+.logo:after {
+content: 'JENKINS CKSPLUS';
+font-weight: bold;
+font-size: 20px;
+margin-left: 50px;
+margin-right: 12px;
+color: white;
+line-height: 40px;
+}
+```
