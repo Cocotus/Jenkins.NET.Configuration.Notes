@@ -33,11 +33,13 @@ You can simply create a new Visual Studio project and get the Opencover, Reporte
 - Environment Injector Plugin: This plugin makes it possible to set an environment for the builds
 - xUnit Plugin: This plugin makes it possible to record xUnit test reports
 - change-assembly-version-plugin: The plugin will change the AssemblyVersion of all files named AssemblyInfo.cs (or other inserted) under the workspace folder.
+- PowerShell plugin
 
 #### Opional Jenkins Plugins
 -	Dashboard View: Customizable dashboard that can present various views of job information
 - Role-based Authorization Strategy Plugin: Enables user authorization using a Role-Based strategy
 - Simple Theme Plugin: This plugin allows to customize Jenkin's appearance with custom CSS and JavaScript
+- Modern Status Plugin: Change some icons
 
 ### 3. Windows service configuration
 To avoid problems with the NugetPackage restore step you should set the user of Jenkins service to the local admin account instead of default systemaccount. For that go to Windows service menu, right click on Jenkins entry and set account details to admin account. 
