@@ -120,9 +120,11 @@ JOBPROJECTNAME=MyProject
 JOBTESTPROJECTNAME=MyProject.Tests
 ```
 ### 1. Build action: Change assembly
+
+#### Configuration for NETCORE/NETSTANDARD2+ class libraries (Directory.Build.props support)
 Assembly Version: 
 ```shell
-$SVN_REVISION
+$SVN_REVISION (or other variable you want to use as version suffix)
 ```
 FileName: 
 ```shell
@@ -135,6 +137,23 @@ RegexPattern:
 ReplacementPattern: 
 ```shell
 <Version>$1.$2.%s<\/Version>
+ ```
+#### Configuration for WP/pre NETSTANDARD packages (Assemblyversion (.cs/.vb) support)
+Assembly Version: 
+```shell
+$SVN_REVISION (or other variable you want to use as version suffix)
+```
+FileName: 
+```shell
+**/MyProject/My Project/AssemblyInfo.vb
+```
+RegexPattern: 
+```shell
+Assembly(\w*)Version\("(\d+).(\d+).(\d+).(\d+)"\)
+```
+ReplacementPattern: 
+```shell
+Assembly$1Version("$2.$3.%s")
  ```
  
 ### 2. Build action: Execute Windows batch command 
