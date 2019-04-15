@@ -25,12 +25,18 @@ Tip:
 You can simply create a new Visual Studio project and get the Opencover, Reporter and Cobertura NugetPackages using Nuget packet managment menu. After installation go to .package folder and copy the opencover and reporter folders from there to JENKINSTOOLS. Right click on folder after moving it to C:\ and set folder rights to read/write for users.
 
 ### 2. Required Jenkins Plugins
-- Git Plugin: allows use of Git as a build Source Code Management
+- Source Code Plugin like Git Plugin: allows use of Git as a build Source Code Management
 - MSBuild Plugin: allows use of MSBuild.exe to build .NET projects
-- Warnings Plugin: collects compiler warnings of the project modules and visualizes the results
-- NUnit Plugin: allows you to publish NUnit test results
+- Warnings Next Generation Plugin: collects compiler warnings of the project modules and visualizes the results
 - Cobertura Plugin: allows you to capture and visualize code coverage data 
 - HTML Publisher Plugin: allows you to publish HTML reports for Job builds
+- Environment Injector Plugin: This plugin makes it possible to set an environment for the builds
+- xUnit Plugin: This plugin makes it possible to record xUnit test reports
+
+#### Opional Jenkins Plugins
+-	Dashboard View: Customizable dashboard that can present various views of job information
+- Role-based Authorization Strategy Plugin: Enables user authorization using a Role-Based strategy
+- Simple Theme Plugin: This plugin allows to customize Jenkin's appearance with custom CSS and JavaScript
 
 ### 3. Windows service configuration
 To avoid problems with the NugetPackage restore step you should set the user of Jenkins service to the local admin account instead of default systemaccount. For that go to Windows service menu, right click on Jenkins entry and set account details to admin account. 
@@ -54,8 +60,7 @@ In [Jenkins directory]\jenkins.xml search following lines:
 <executable>java.exe</executable>
 <arguments>[arguments are here]</arguments>
 
-Add the following argument to the whitespace-separated list of arguments:
-Edit __C:\Program Files (x86)\Jenkins\jenkins.xml:__ and replace existing arguments entry in file with following:
+Replace existing argument entry in that file with following:
 ```shell
   <executable>%BASE%\jre\bin\java</executable>
   <arguments>-Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -Dhudson.model.DirectoryBrowserSupport.CSP="sandbox; default-src 'none'; img-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" -jar "%BASE%\jenkins.war" --httpPort=8080 --webroot="%BASE%\war"</arguments>
