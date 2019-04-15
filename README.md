@@ -140,7 +140,7 @@ ReplacementPattern:
 ```shell
 <Version>$1.$2.%s<\/Version>
  ```
-#### Configuration for WP/pre NETSTANDARD packages (Assemblyversion (.cs/.vb) support)
+#### Configuration for WPF/pre NETSTANDARD packages (Assemblyversion (.cs/.vb) support)
 Assembly Version: 
 ```shell
 $SVN_REVISION (or other variable you want to use as version suffix)
