@@ -17,12 +17,12 @@ Furthermore this tutorial will tell you how to achieve following for each job in
 - ReportGenerator.exe https://www.nuget.org/packages/ReportGenerator/
 - NugetServer like Baget (its free and open source and works) https://github.com/loic-sharma/BaGet/
 
-Copy Nuget.exe together with Installation folders of OpenCover and Reporter Nuget Package in a new folder called JENKINSTOOLS and move that folder to C:\ root. So result structure should look something like that:
+Copy Nuget.exe together with Installation folders of OpenCover and Reporter Nuget Package in a new folder called ___JENKINSTOOLS___ and move that folder to C:\ root. So result structure should look something like that:
 
 ![alt text](https://github.com/Cocotus/JenkinsCIConcept/blob/master/Jenkins_Tools.png "Logo Title Text 1")
 
 Tip:
-You can simply create a new Visual Studio project and get the Opencover, Reporter and Cobertura NugetPackages using Nuget packet managment menu. After installation go to .package folder and copy the opencover and reporter folders from there to JENKINSTOOLS. Right click on folder after moving it to C:\ and set folder rights to read/write for users.
+You can simply create a new Visual Studio project and get the Opencover, Reporter and Cobertura NugetPackages using Nuget packet managment menu. After installation go to .package folder and copy the opencover and reporter folders from there to ___JENKINSTOOLS___. Right click on folder after moving it to C:\ and set folder rights to read/write for users.
 
 ### 2. Required Jenkins Plugins
 - Source Code Plugin like Git Plugin: allows use of Git as a build Source Code Management
@@ -45,7 +45,7 @@ To avoid problems with the NugetPackage restore step you should set the user of 
 I suggest that anonym users can see projects without the need to login (so they can see project statistics). Of course they should not be able to configure any settings. For that do the follwing:
 
 Install that plugin in Jenkins:
-https://wiki.jenkins.io/display/JENKINS/Role+Strategy+Plugin plugin
+https://wiki.jenkins.io/display/JENKINS/Role+Strategy+Plugin
 
 After that there's a new menu entry in Jenkins main menu and you can configure like that:
 Screenshots: 
@@ -69,11 +69,9 @@ Replace existing argument entry in that file with following:
 Then restart the Jenkins service to pick up the change
 
 ### 6. For projects hosted on GITHUB: Github Token configuration
-1. Jenkins > Credentials > System > Global Credentials
-    Add Credential --> Secret Text --> Github Personal Access Token (GPAT):
-    (admin:repo_hook, repo) -> Save
-2. Go to Jenkins > Global Configuration
-    Add Git Server, Automanage Hooks -->  Test Connection
+1. ___Jenkins -> Credentials -> System -> Global Credentials -> Add Credential -> Secret Text -> Github Personal Access Token (GPAT) (admin:repo_hook, repo) -> Save___
+    
+2. Go to ___Jenkins -> Global Configuration -> Add Git Server, Automanage Hooks ->  Test Connection___
 
 ### 7. MSBuild Plugin configuration
 1. Jenkins Configuration > Helper Tools configuration:
