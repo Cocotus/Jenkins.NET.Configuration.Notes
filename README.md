@@ -127,8 +127,11 @@ Nothing special here, set up as you like
 
 ### Build Environment: 
 Check: ___Delete workspace before build starts___
+
 Check: ___Inject environment variables___
+
 Properties Content:
+
 ```shell
 JOBPROJECTNAME=MyProject
 JOBTESTPROJECTNAME=MyProject.Tests
