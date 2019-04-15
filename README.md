@@ -55,8 +55,11 @@ In [Jenkins directory]\jenkins.xml search following lines:
 <arguments>[arguments are here]</arguments>
 
 Add the following argument to the whitespace-separated list of arguments:
-
-**-Dhudson.model.DirectoryBrowserSupport.CSP=**
+Edit __C:\Program Files (x86)\Jenkins\jenkins.xml:__ and replace existing arguments entry in file with following:
+```shell
+  <executable>%BASE%\jre\bin\java</executable>
+  <arguments>-Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -Dhudson.model.DirectoryBrowserSupport.CSP="sandbox; default-src 'none'; img-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" -jar "%BASE%\jenkins.war" --httpPort=8080 --webroot="%BASE%\war"</arguments>
+```
 
 Then restart the Jenkins service to pick up the change
 
