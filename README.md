@@ -32,6 +32,7 @@ You can simply create a new Visual Studio project and get the Opencover, Reporte
 - HTML Publisher Plugin: allows you to publish HTML reports for Job builds
 - Environment Injector Plugin: This plugin makes it possible to set an environment for the builds
 - xUnit Plugin: This plugin makes it possible to record xUnit test reports
+- change-assembly-version-plugin: The plugin will change the AssemblyVersion of all files named AssemblyInfo.cs (or other inserted) under the workspace folder.
 
 #### Opional Jenkins Plugins
 -	Dashboard View: Customizable dashboard that can present various views of job information
